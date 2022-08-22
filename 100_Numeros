@@ -1,0 +1,40 @@
+#include <stdlib.h>
+#include <conio.h>
+
+
+int main(void)
+{
+  int n, Vet[1000], media,M=50,m=50;
+
+  printf("Gerando 1000 valores aleatorios:\n\n");
+
+  srand(time(NULL));
+
+  for (n = 0; n < 1000; n++)
+  {
+
+    Vet[n]=  rand() % 100;
+
+    if(m>Vet[n])
+        m=Vet[n];
+    if(M<Vet[n])
+        M=Vet[n];
+
+    media= media + Vet[n];
+
+
+  }
+
+  media=media/1000;
+  for (n = 0; n < 1000; n++){
+
+    printf("%d ", Vet[n]);
+
+
+
+  }printf("\nMedia: %d \n", media);
+  printf("Maior: %d    Menor:%d", M,m);
+
+  getch();
+  return 0;
+}
